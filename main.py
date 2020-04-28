@@ -18,12 +18,16 @@ def encrypt(phrase, key):
 
 		pos = ord(letter) % 97
 
-		cNumber = int(INDEX[pos]) + key
-		print(cNumber)
-		if(cNumber > 26):
-			cNumber = cNumber % 26
-		result[x] = cNumber
-		Encrypted[pos] = cNumber
+		if(Encrypted[pos] != '-'):
+			result[x] = Encrypted[pos]
+
+		else:
+			cNumber = int(INDEX[pos]) + key
+			print(cNumber)
+			if(cNumber > 26):
+				cNumber = cNumber % 26
+			result[x] = cNumber
+			Encrypted[pos] = cNumber
 		pass
 
 	print(result)
